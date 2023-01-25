@@ -1,4 +1,4 @@
-# Crunchyroll iFrame Player [![Built with love](https://img.shields.io/badge/made%20with-javascript-yellow?style=for-the-badge)](https://github.com/Luco1421/Luco1421.github.io/tree/main/assets/js) [![Downloads](https://img.shields.io/github/downloads/Dev4Mod/crp-iframe-player/total.svg?style=for-the-badge)](https://github.com/Luco1421/Luco1421.github.io/releases/tag/Descarga)
+# Crunchyroll iFrame Player [![Built with love](https://img.shields.io/badge/made%20with-javascript-yellow?style=for-the-badge)](https://github.com/Luco1421/Luco1421.github.io/tree/main/assets/js) [![Downloads](https://img.shields.io/github/downloads/Dev4Mod/crp-iframe-player/total.svg?style=for-the-badge)](https://github.com/Luco1421/Luco1421.github.io/releases/tag/Releases)
 
 Esta es una extension de comunidad que permite ver todo el contenido de Crunchyroll.  
 Originalmente criada por [itallolegal](https://github.com/itallolegal) (desativado) e [Hyper-Tx](https://github.com/Hyper-Tx), atualmente mantenida por [mateus7g](https://github.com/mateus7g) y atualizado por [Dev4Mod](https://github.com/Dev4Mod) con el MOD en español por [Luco1421](https://github.com/Luco1421).
@@ -10,11 +10,11 @@ Muchas Gracias por utilizar. :)
 
 Usted puede encontrar las últimas versiones disponibles debajo:
 
-<a href="https://github.com/Luco1421/Luco1421.github.io/releases/tag/Descarga" target="_blank"><img align="right" alt="Desktop" src="https://img.shields.io/badge/desktop-v1.4.0-violet?style=for-the-badge&logo=windows"></a>
+<a href="https://github.com/Luco1421/Luco1421.github.io/releases/tag/Releases" target="_blank"><img align="right" alt="Desktop" src="https://img.shields.io/badge/desktop-v1.4.0-violet?style=for-the-badge&logo=windows"></a>
 
 #### Desktop (PC)
 
-Actualmente la version para Desktop está disponible [aqui](https://github.com/Luco1421/Luco1421.github.io/releases/tag/Descarga).  
+Actualmente la version para Desktop está disponible [aqui](https://github.com/Luco1421/Luco1421.github.io/releases/tag/Releases).  
 Para instalar ver el paso a paso [para pc](#%EF%B8%8F-como-instalar-desktop).
 
 ## 🖥️ Como instalar? (desktop)
