@@ -1,6 +1,0 @@
-
-# Screenshots Actualizados
-
-Navegador Brave
-
-
