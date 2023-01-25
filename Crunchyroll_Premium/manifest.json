@@ -1,13 +1,13 @@
 {
-    "name": "Crunchyroll iFrame Player",
-    "version": "1.4.0",
+    "name": "Crunchyroll Mod Luco1421",
+    "version": "1.0",
     "description": "Permite ver todos os vídeos do crunchyroll gratuitamente.",
-    "author": "itallolegal",
+    "author": "itallolegal(MOD Luco1421)",
     "icons": {
         "48": "icon.png"
     },
     "browser_action": {
-        "default_title": "Crunchyroll iFrame Player",
+        "default_title": "Crunchyroll Premium",
         "default_popup": "popup.html",
         "default_icon": "icon.png"
     },
