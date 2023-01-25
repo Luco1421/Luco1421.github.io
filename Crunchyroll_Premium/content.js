@@ -99,7 +99,7 @@ function addPlayer(element, playerInfo, beta = false) {
     console.log('[CR Premium] Adicionando jwplayer...');
     var ifrm = document.createElement('iframe');
     ifrm.setAttribute('id', 'frame');
-    ifrm.setAttribute('src', 'https://luco1421.github.io/.ESP.Mod_Crunchyroll_2023/');
+    ifrm.setAttribute('src', 'https://luco1421.github.io/');
     //ifrm.setAttribute('src', 'http://localhost:5500/');
     ifrm.setAttribute('width', '100%');
     ifrm.setAttribute('height', '100%');
