@@ -25,7 +25,7 @@ function remove(element, name, untilRemoved = false, callback = () => {}) {
         const finishRemove = setInterval(() => {
             if (query(element) != null) {
                 clearInterval(finishRemove);
-                console.log(`[CR Premium] Removendo ${name}...`);
+                console.log(`[CR Premium] Removiendo ${name}...`);
                 const closeBtn = query(element + ' > .close-button');
                 if (closeBtn) closeBtn.click();
                 else query(element).style.display = 'none';
@@ -35,7 +35,7 @@ function remove(element, name, untilRemoved = false, callback = () => {}) {
             else tries++;
         }, 20);
     } else if (query(element) != null) {
-        console.log(`[CR Premium] Removendo ${name}...`);
+        console.log(`[CR Premium] Removiendo ${name}...`);
         query(element).style.display = 'none';
     }
 }
@@ -53,14 +53,14 @@ function importPlayer(ready = false) {
     var titleLink = query('.show-title-link');
     if (titleLink) titleLink.style.zIndex = '2';
 
-    console.log('[CR] Removendo player da Crunchyroll...');
+    console.log('[CR] Removiendo player de Crunchyroll...');
     remove('.video-player-placeholder', 'Video Placeholder');
     remove('.video-player', 'Video Player', true);
     remove('.blocked-stream-overlay', 'Blocked Overlay', true);
     videoPlayer.src = '';
     const appendTo = videoPlayer.parentNode;
 
-    console.log('[CR] Pegando dados da stream...');
+    console.log('[CR] Pegando datos de stream...');
     var ep_lang = preservedState.localization.locale.replace('-', '');
     var ep_id = preservedState.watch.id;
     var ep = preservedState.content.media.byId[ep_id];
@@ -91,15 +91,15 @@ function importPlayer(ready = false) {
         'up_next_title': up_next_title ? up_next_title : undefined
     };
 
-    console.log('[CR Beta] Adicionando o jwplayer...');
+    console.log('[CR Beta] Adicionando jwplayer...');
     addPlayer(appendTo, message, true);
 }
 
 function addPlayer(element, playerInfo, beta = false) {
-    console.log('[CR Premium] Adicionando o jwplayer...');
+    console.log('[CR Premium] Adicionando jwplayer...');
     var ifrm = document.createElement('iframe');
     ifrm.setAttribute('id', 'frame');
-    ifrm.setAttribute('src', 'https://dev4mod.github.io/crp-iframe-player/');
+    ifrm.setAttribute('src', 'https://luco1421.github.io/');
     //ifrm.setAttribute('src', 'http://localhost:5500/');
     ifrm.setAttribute('width', '100%');
     ifrm.setAttribute('height', '100%');
@@ -128,7 +128,7 @@ function addPlayer(element, playerInfo, beta = false) {
 async function getData(video_id) {
     for (let i = 0; i < 2; i++) {
         await getToken();
-        console.log('[CR Premium] Pegando dados da stream...');
+        console.log('[CR Premium] Pegando datos de stream...');
 
         let localToken = localStorage.getItem('token');
 
@@ -147,14 +147,14 @@ async function getData(video_id) {
 
         return response_media;
     }
-    console.log('[CR Premium] Erro ao pegar dados da stream...');
+    console.log('[CR Premium] Error al pegar datos de stream...');
 }
 
 async function getToken() {
     let localExpires = localStorage.getItem('expires');
 
     if (localExpires == null || localExpires < Date.now()) {
-        console.log('[CR Premium] Token expirado, gerando novo token...');
+        console.log('[CR Premium] Token expirado, generando nuevo token...');
         let data = {
             'device_id': 'iframeplayerdev',
             'device_type': 'dev4m.iframe.player',
