@@ -1,6 +1,6 @@
 var s = document.createElement('script');
 s.src = chrome.runtime.getURL('interceptor.js');
-s.onload = function () {
+s.onload = function() {
     this.remove();
 };
 (document.head || document.documentElement).appendChild(s);
@@ -96,6 +96,7 @@ function importPlayer(ready = false) {
 }
 
 function addPlayer(element, playerInfo, beta = false) {
+
     console.log('[CR Premium] Adicionando jwplayer...');
     var ifrm = document.createElement('iframe');
     ifrm.setAttribute('id', 'frame');
@@ -109,21 +110,21 @@ function addPlayer(element, playerInfo, beta = false) {
     ifrm.setAttribute('allow', 'autoplay; encrypted-media *');
 
     element.appendChild(ifrm);
-
-    chrome.storage.sync.get(['forcemp4', 'aseguir', 'cooldown', 'webvideocaster'], function (items) {
-        ifrm.onload = async function () {
-            let media = await getData(playerInfo.id);
-            playerInfo['video_config_media'] = media;
-            playerInfo['webvideocaster'] = items.webvideocaster === undefined ? false : items.webvideocaster;
-            playerInfo['up_next_cooldown'] = items.cooldown === undefined ? 5 : items.cooldown;
-            playerInfo['up_next_enable'] = items.aseguir === undefined ? true : items.aseguir;
-            playerInfo['force_mp4'] = items.forcemp4 === undefined ? false : items.forcemp4;
-            playerInfo['version'] = '1.4.0';
-            playerInfo['noproxy'] = true;
-            ifrm.contentWindow.postMessage(playerInfo, '*');
-        };
-    });
 }
+
+chrome.storage.sync.get(['forcemp4', 'aseguir', 'cooldown', 'webvideocaster'], function(items) {
+    ifrm.onload = async function() {
+        let media = await getData(playerInfo.id);
+        playerInfo['video_config_media'] = media;
+        playerInfo['webvideocaster'] = items.webvideocaster === undefined ? false : items.webvideocaster;
+        playerInfo['up_next_cooldown'] = items.cooldown === undefined ? 5 : items.cooldown;
+        playerInfo['up_next_enable'] = items.aseguir === undefined ? true : items.aseguir;
+        playerInfo['force_mp4'] = items.forcemp4 === undefined ? false : items.forcemp4;
+        playerInfo['version'] = '1.0';
+        playerInfo['noproxy'] = true;
+        ifrm.contentWindow.postMessage(playerInfo, '*');
+    };
+});
 
 async function getData(video_id) {
     for (let i = 0; i < 2; i++) {
@@ -179,7 +180,10 @@ async function getToken() {
 
 function fetchByPass(url, options) {
     return new Promise((resolve, reject) => {
-        chrome.runtime.sendMessage({ url, options }, response => {
+        chrome.runtime.sendMessage({
+            url,
+            options
+        }, response => {
             if (response.error) {
                 reject(response.error);
             } else {
@@ -232,7 +236,7 @@ function fetch(url) {
 }
 
 document.addEventListener('DOMContentLoaded', onloadfunction, false);
-document.onreadystatechange = function () {
+document.onreadystatechange = function() {
     if (document.readyState === 'interactive') {
         console.log('[CR Beta] Searching for INITIAL_STATE');
         const HTML = '' + document.body.innerHTML;

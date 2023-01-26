@@ -158,19 +158,19 @@ window.addEventListener('message', async e => {
         // Variaveis para os botões.
         let update_iconPath = 'assets/icon/update_icon.svg';
         let update_id = 'update-video-button';
-        let update_tooltipText = 'Atualização Disponível';
+        let update_tooltipText = 'Actualizacion Disponible';
 
         let rewind_iconPath = 'assets/icon/replay-10s.svg';
         let rewind_id = 'rewind-video-button';
-        let rewind_tooltipText = 'Voltar 10s';
+        let rewind_tooltipText = 'Volver 10s';
 
         let forward_iconPath = 'assets/icon/forward-30s.svg';
         let forward_id = 'forward-video-button';
-        let forward_tooltipText = 'Avançar 30s';
+        let forward_tooltipText = 'Avanzar 30s';
 
         let webvideocaster_iconPath = 'assets/icon/webvideocaster_icon.png';
         let webvideocaster_id = 'webvideocaster-video-button';
-        let webvideocaster_tooltipText = 'Abrir no WebVideoCaster';
+        let webvideocaster_tooltipText = 'Abrir en WebVideoCaster';
 
         let download_iconPath = 'assets/icon/download_icon.svg';
         let download_id = 'download-video-button';
@@ -193,7 +193,7 @@ window.addEventListener('message', async e => {
             downloadModal.style.visibility = downloadModal.style.visibility === 'hidden' ? 'visible' : 'hidden';
             if (!didDownload) {
                 didDownload = true;
-                console.log('[CR Premium] Baixando sources:');
+                console.log('[CR Premium] Descargando Recursos:');
                 for (let id of [1, 0, 2, 3, 4]) linkDownload(id);
             }
         }
@@ -256,7 +256,7 @@ window.addEventListener('message', async e => {
                 if (is_beta && document.getElementById('player_div')) document.getElementById('player_div').classList.add('beta-layout');
             })
             .on('error', e => {
-                displayError(`Mais informações no Console.\n${linkIssue(`Código: ${e.code}`)}`);
+                displayError(`Mas informacion en Consola.\n${linkIssue(`Código: ${e.code}`)}`);
                 console.error(e);
             })
             .on('audioTrackChanged', () => updateWebVideoCasterAnchor())
@@ -297,7 +297,7 @@ window.addEventListener('message', async e => {
     // Checa se o URL do video_mp4_array[lang][id] existe e calcula o tamanho p/ download
     function linkDownload(id, tentativas = 0) {
         const sourceLang = getSourceLocale();
-        console.log('  - Baixando (' + sourceLang + '): ', r[id]);
+        console.log('  - Descargando (' + sourceLang + '): ', r[id]);
         let video_mp4_url = video_mp4_array[sourceLang][id];
         if (!video_mp4_url) return disableDownload(id);
 
@@ -314,7 +314,7 @@ window.addEventListener('message', async e => {
                     if (i == 0) return console.log('addSource#i == 0');
                     let return_fileSize = (fileSize / Math.pow(1024, i)).toFixed(1) + ' ' + sizes[i];
                     dlSize[id].innerText = return_fileSize;
-                    return console.log(`[CR Premium] Source adicionado: ${r[id]} (${return_fileSize})`);
+                    return console.log(`[CR Premium] Recurso: ${r[id]} (${return_fileSize})`);
                 }
             } else if (http.readyState == 4 && tentativas < 3) return setTimeout(() => linkDownload(id, tentativas + 1), 5000);
             else if (http.readyState == 4) return disableDownload(id);

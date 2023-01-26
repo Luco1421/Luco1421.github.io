@@ -1,7 +1,7 @@
 {
     "name": "Crunchyroll Mod Luco1421",
     "version": "1.0",
-    "description": "Permite ver todos os vídeos do crunchyroll gratuitamente.",
+    "description": "Permite ver todos los vídeos de crunchyroll gratuitamente.",
     "author": "itallolegal(MOD Luco1421)",
     "icons": {
         "48": "icon.png"
@@ -23,6 +23,6 @@
             "run_at": "document_start"
         }
     ],
-    "manifest_version": 2,
+    "manifest_version": 1,
     "web_accessible_resources": ["interceptor.js"]
 }
