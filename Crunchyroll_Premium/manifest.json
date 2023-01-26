@@ -23,6 +23,6 @@
             "run_at": "document_start"
         }
     ],
-    "manifest_version": 1,
+    "manifest_version": 2,
     "web_accessible_resources": ["interceptor.js"]
 }
